@@ -1,6 +1,8 @@
 import pygame
 import pygame_menu
 
+# promt
+
 # Инициализация Pygame
 pygame.init()
 
