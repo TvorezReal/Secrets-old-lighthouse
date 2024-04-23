@@ -3,7 +3,7 @@ import pygame_menu
 
 # Инициализация Pygame
 pygame.init()
-
+pygame.mixer.init()  # Инициализация микшера
 
 class StartingPage:
     def __init__(self, width=800, height=600):
@@ -16,6 +16,10 @@ class StartingPage:
         # Загрузка и масштабирование фонового изображения
         self.background_image = pygame.image.load("start_page.jpg")
         self.background_image = pygame.transform.scale(self.background_image, (self.width, self.height))
+
+        # Загрузка и установка звука фоновой музыки
+        self.background_music = pygame.mixer.Sound("background_music.mp3")
+        self.background_music.play(loops=-1)  # Воспроизведение на бесконечном цикле
 
         # Настройки Pygame
         self.running = True
